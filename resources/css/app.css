@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap');
+@import 'tailwindcss';
+
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Montserrat', sans-serif;
+    --font-montserrat: 'Montserrat', sans-serif;
+
+    --color-brand-orange: #FF5A00;
+    --color-brand-blue: #0057FF;
+    --color-brand-cream: #FFF4E6;
+    --color-brand-navy: #0D1B3D;
+    --color-brand-yellow: #FFC107;
+    --color-brand-light-navy: #152752;
+}
+
+@layer utilities {
+    .bg-grid-pattern {
+        background-image: radial-gradient(rgba(0, 87, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+.animate-wa-pulse {
+    animation: pulse-ring 2s infinite;
+}
+
+.bouncy-hover {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.bouncy-hover:hover {
+    transform: translateY(-8px);
+}
+
+@keyframes waveFlowSlow {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes waveFlowFast {
+    0% {
+        transform: translateX(-50%);
+    }
+    50% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.animate-wave-slow {
+    animation: waveFlowSlow 14s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+.animate-wave-fast {
+    animation: waveFlowFast 8s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+
