@@ -297,87 +297,8 @@
         </div>
     </section>
 
-    <!-- Bottom Animated Wave Divider into bg-brand-navy -->
+    <!-- Bottom Animated Wave Divider into bg-white -->
     <div class="relative w-full overflow-hidden leading-none z-20 bg-brand-cream">
-        <div class="w-[200%] flex animate-wave-slow pointer-events-none opacity-40">
-            <svg class="w-1/2 h-10 sm:h-16 text-brand-navy" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="currentColor">
-                <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,10 1200,60 L1200,120 L0,120 Z"></path>
-            </svg>
-            <svg class="w-1/2 h-10 sm:h-16 text-brand-navy" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="currentColor">
-                <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,10 1200,60 L1200,120 L0,120 Z"></path>
-            </svg>
-        </div>
-        <div class="w-[200%] flex animate-wave-fast absolute top-0 left-0 pointer-events-none">
-            <svg class="w-1/2 h-10 sm:h-16 text-brand-navy" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="currentColor">
-                <path d="M0,20 C200,80 400,-20 600,50 C800,120 1000,10 1200,40 L1200,120 L0,120 Z"></path>
-            </svg>
-            <svg class="w-1/2 h-10 sm:h-16 text-brand-navy" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="currentColor">
-                <path d="M0,20 C200,80 400,-20 600,50 C800,120 1000,10 1200,40 L1200,120 L0,120 Z"></path>
-            </svg>
-        </div>
-    </div>
-
-    <!-- Identitas Visual & Journey Line Section -->
-    <section class="py-16 bg-brand-navy text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-6 space-y-5">
-                    <span class="bg-brand-orange/20 text-brand-orange font-extrabold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-full inline-flex items-center gap-1.5 border border-brand-orange/30">
-                        <i class="fa-solid fa-paintbrush"></i> Simbol Visual Brand
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl font-black leading-snug">
-                        Falsafah Identitas Visual: <br><span class="text-brand-orange">Journey Line</span>
-                    </h2>
-                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed font-medium">
-                        Identitas visual PIDIDI diarahkan menjadi modern, berani, dan premium. Elemen visual utama kami adalah <strong>Journey Line</strong> — garis mengalir abstrak yang terinspirasi dari gelombang ombak, sekaligus melambangkan:
-                    </p>
-
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs font-bold text-gray-200">
-                        <div class="bg-white/10 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fa-solid fa-road text-brand-orange"></i> Jalan</div>
-                        <div class="bg-white/10 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fa-solid fa-water text-brand-blue"></i> Sungai & Ombak</div>
-                        <div class="bg-white/10 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fa-solid fa-wind text-sky-400"></i> Angin</div>
-                        <div class="bg-white/10 p-3 rounded-xl border border-white/10 flex items-center gap-2"><i class="fa-solid fa-mountain-sun text-amber-400"></i> Horizon</div>
-                        <div class="bg-white/10 p-3 rounded-xl border border-white/10 flex items-center gap-2 col-span-2 sm:col-span-2"><i class="fa-solid fa-route text-rose-400"></i> Alur Perjalanan Hidup</div>
-                    </div>
-                </div>
-
-                <!-- Right Visual Color Badge Card -->
-                <div class="lg:col-span-6 flex justify-center">
-                    <div class="bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 space-y-6 max-w-md w-full shadow-2xl text-center">
-                        <div class="flex items-center justify-center gap-4">
-                            <div class="w-16 h-16 rounded-2xl bg-brand-orange shadow-lg shadow-orange-500/50 flex flex-col items-center justify-center text-white">
-                                <span class="text-[10px] font-black uppercase">Electric</span>
-                                <span class="text-xs font-bold">Orange</span>
-                            </div>
-                            <div class="w-16 h-16 rounded-2xl bg-brand-blue shadow-lg shadow-blue-500/50 flex flex-col items-center justify-center text-white">
-                                <span class="text-[10px] font-black uppercase">Cobalt</span>
-                                <span class="text-xs font-bold">Blue</span>
-                            </div>
-                        </div>
-
-                        <!-- Wave Journey Line SVG Demo -->
-                        <div class="w-full h-12 relative overflow-hidden">
-                            <svg class="w-full h-full text-brand-orange" viewBox="0 0 300 40" fill="none">
-                                <path d="M 0,20 C 50,5 100,35 150,20 C 200,5 250,35 300,20" stroke="#FF5A00" stroke-width="4" stroke-linecap="round"/>
-                                <path d="M 0,24 C 50,9 100,39 150,24 C 200,9 250,39 300,24" stroke="#0057FF" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
-                            </svg>
-                        </div>
-
-                        <p class="text-xs text-gray-300 italic">
-                            Kombinasi warna mencolok dan Journey Line mengekspresikan keberanian eksplorasi dan kehangatan koneksi antarmanusia.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Top Animated Wave Divider into bg-white -->
-    <div class="relative w-full overflow-hidden leading-none z-20 bg-brand-navy">
         <div class="w-[200%] flex animate-wave-slow pointer-events-none opacity-40">
             <svg class="w-1/2 h-10 sm:h-16 text-white" viewBox="0 0 1200 120" preserveAspectRatio="none" fill="currentColor">
                 <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,10 1200,60 L1200,120 L0,120 Z"></path>
