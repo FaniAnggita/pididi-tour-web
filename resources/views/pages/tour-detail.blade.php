@@ -10,7 +10,7 @@
 @push('schema')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@@context": "https://schema.org",
   "@type": "TouristTrip",
   "name": "{{ e($tour->title) }}",
   "description": "{{ e(strip_tags($tour->short_description ?? $tour->full_description)) }}",

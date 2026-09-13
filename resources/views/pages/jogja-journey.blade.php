@@ -10,7 +10,7 @@
 @push('schema')
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@@context": "https://schema.org",
   "@type": "TouristTrip",
   "name": "VAYANA JOURNEY: The Jogja You Haven't Met",
   "description": "Menemukan Jogja melalui manusia, karya, rasa, dan cerita (3D2N Curated Small Group Journey).",
