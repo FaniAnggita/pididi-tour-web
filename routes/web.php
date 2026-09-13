@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicPageController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CompanySettingController;
 use App\Http\Controllers\Admin\TourController;
@@ -15,7 +16,7 @@ use App\Http\Controllers\Admin\DestinationController;
 
 /*
 |--------------------------------------------------------------------------
-| Public Routes
+| Public & Auth Routes
 |--------------------------------------------------------------------------
 */
 Route::get('/', [PublicPageController::class, 'home'])->name('home');
@@ -29,12 +30,17 @@ Route::get('/kontak', [PublicPageController::class, 'contact'])->name('contact')
 Route::post('/kontak', [PublicPageController::class, 'storeContact'])->name('contact.store');
 Route::get('/sitemap.xml', [PublicPageController::class, 'sitemap'])->name('sitemap');
 
+// Auth Routes
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 /*
 |--------------------------------------------------------------------------
-| Admin Panel Routes
+| Admin Panel Routes (Protected by Auth Middleware)
 |--------------------------------------------------------------------------
 */
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     // Destinations CRUD (Destinasi Wisata)

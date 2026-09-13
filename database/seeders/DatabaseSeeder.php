@@ -18,11 +18,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // 1. Admin User
-        User::firstOrCreate(
-            ['email' => 'admin@vayanawisata.com'],
+        User::updateOrCreate(
+            ['email' => 'admin@vayana.com'],
             [
                 'name' => 'Admin Vayana',
-                'password' => bcrypt('password123'),
+                'password' => bcrypt('Vayana.21'),
             ]
         );
 
