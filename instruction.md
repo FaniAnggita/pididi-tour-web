@@ -65,3 +65,4 @@ Buatkan susunan Blade view modular untuk halaman-halaman berikut:
 4. Micro-copy / Tooltip imut ketika mouse diarahkan ke badge tertentu.
 
 Tolong kembangkan struktur file Blade dan kode Tailwind CSS-nya agar rapi, modern, dan langsung bisa dites secara visual!
+

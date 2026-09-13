@@ -1,6 +1,35 @@
 @extends('layouts.app')
 
-@section('title', 'PIDIDI JOURNEY: The Jogja You Haven\'t Met (3D2N)')
+@section('title', 'VAYANA JOURNEY: The Jogja You Haven\'t Met (3D2N) | Vayana Wisata')
+@section('meta_description', 'Paket Wisata Spesial Vayana Journey 3 Hari 2 Malam di Yogyakarta: Menemukan Jogja melalui manusia, karya, rasa, desa, dan cerita lokal.')
+@section('meta_keywords', 'Vayana Journey Jogja, Small Group Trip Jogja, Experiential Travel Yogyakarta, Open Batch Wisata Jogja, Vayana Wisata')
+@section('og_title', 'VAYANA JOURNEY: The Jogja You Haven\'t Met (3D2N)')
+@section('og_description', 'Datang sebagai wisatawan. Pulang membawa cerita. Menemukan Jogja melalui manusia, karya, rasa, dan cerita.')
+@section('og_image', asset('vayana_with_tagline.png'))
+
+@push('schema')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "VAYANA JOURNEY: The Jogja You Haven't Met",
+  "description": "Menemukan Jogja melalui manusia, karya, rasa, dan cerita (3D2N Curated Small Group Journey).",
+  "touristType": "Small Group Travelers",
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ $journey->price ?? 3650000 }}",
+    "priceCurrency": "IDR",
+    "availability": "https://schema.org/InStock",
+    "url": "{{ url()->current() }}"
+  },
+  "provider": {
+    "@type": "TravelAgency",
+    "name": "Vayana Wisata",
+    "url": "{{ url('/') }}"
+  }
+}
+</script>
+@endpush
 
 @section('content')
 
@@ -26,7 +55,7 @@
                 </div>
 
                 <div class="space-y-2">
-                    <span class="text-brand-orange text-sm font-extrabold tracking-widest uppercase block">PIDIDI JOURNEY</span>
+                    <span class="text-brand-orange text-sm font-extrabold tracking-widest uppercase block">VAYANA JOURNEY</span>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-white tracking-tight">
                         THE JOGJA YOU <span class="text-amber-300 relative inline-block">
                             HAVEN'T MET
@@ -55,14 +84,14 @@
                 </div>
 
                 <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <a href="https://wa.me/6282231872974?text=Halo%20PIDIDI,%20saya%20tertarik%20dengan%20PIDIDI%20JOURNEY:%20The%20Jogja%20You%20Haven't%20Met" 
+                    <a href="https://wa.me/6282231872974?text=Halo%20Vayana%20Wisata,%20saya%20tertarik%20dengan%20VAYANA%20JOURNEY:%20The%20Jogja%20You%20Haven't%20Met" 
                        target="_blank"
                        class="w-full sm:w-auto bg-brand-orange hover:bg-orange-600 text-white font-extrabold text-base px-8 py-4 rounded-full shadow-2xl transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1">
                         <i class="fa-brands fa-whatsapp text-xl"></i>
                         <span>Pesan Trip Ini</span>
                     </a>
                     <a href="#principles" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-bold text-base px-6 py-3.5 rounded-full border border-white/30 transition-all flex items-center justify-center gap-2">
-                        <span>Lihat 5 Prinsip PIDIDI</span>
+                        <span>Lihat 5 Prinsip Vayana</span>
                         <i class="fa-solid fa-arrow-down"></i>
                     </a>
                 </div>
@@ -77,7 +106,7 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent flex items-end p-6">
                         <div class="text-white space-y-1">
                             <span class="bg-amber-400 text-brand-navy text-[10px] font-black uppercase px-2.5 py-1 rounded-full">Included</span>
-                            <p class="text-xs font-bold text-amber-200 flex items-center gap-1.5"><i class="fa-solid fa-star text-amber-300"></i> Standard PIDIDI Journey Book + Local Voucher</p>
+                            <p class="text-xs font-bold text-amber-200 flex items-center gap-1.5"><i class="fa-solid fa-star text-amber-300"></i> Standard Vayana Journey Book + Local Voucher</p>
                         </div>
                     </div>
                 </div>
@@ -95,7 +124,7 @@
     </div>
 </section>
 
-<!-- 5 Prinsip Pengalaman PIDIDI -->
+<!-- 5 Prinsip Pengalaman Vayana -->
 <section id="principles" class="py-16 bg-brand-cream relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -104,7 +133,7 @@
                 <i class="fa-solid fa-lightbulb text-amber-500"></i> Why This Journey is Unique
             </span>
             <h2 class="text-3xl sm:text-4xl font-black text-brand-navy">
-                5 Prinsip Pengalaman PIDIDI
+                5 Prinsip Pengalaman Vayana
             </h2>
             <p class="text-gray-600 text-sm sm:text-base font-medium">
                 Bukan itinerari biasa. Perjalanan ini dibangun atas 5 pilar filosofi mendalam:
@@ -208,7 +237,7 @@
                             <span class="font-black text-brand-orange w-14 shrink-0">09.00</span>
                             <div>
                                 <strong class="text-brand-navy text-sm block font-extrabold">Arrival & Welcome</strong>
-                                Peserta dijemput dan diajak welcome breakfast di tempat lokal yang punya cerita. Peserta menerima <strong>PIDIDI JOURNEY BOOK</strong> (peta, cerita singkat, & pertanyaan reflektif).
+                                Peserta dijemput dan diajak welcome breakfast di tempat lokal yang punya cerita. Peserta menerima <strong>VAYANA JOURNEY BOOK</strong> (peta, cerita singkat, & pertanyaan reflektif).
                             </div>
                         </div>
 
@@ -249,7 +278,7 @@
                         <div class="flex items-start gap-3">
                             <span class="font-black text-brand-orange w-14 shrink-0">19.00</span>
                             <div>
-                                <strong class="text-brand-navy text-sm block font-extrabold">Jogja After Dark & PIDIDI Conversation</strong>
+                                <strong class="text-brand-navy text-sm block font-extrabold">Jogja After Dark & Vayana Conversation</strong>
                                 Dinner kuliner bercerita dilanjutkan ngobrol santai berfasilitasi: <em>"Apa yang sebenarnya kita cari ketika bepergian?"</em>
                             </div>
                         </div>
@@ -328,7 +357,7 @@
                         <div class="flex items-start gap-3">
                             <span class="font-black text-brand-blue w-14 shrink-0">20.00</span>
                             <div>
-                                <strong class="text-brand-navy text-sm block font-extrabold">PIDIDI Night (Circle Talk)</strong>
+                                <strong class="text-brand-navy text-sm block font-extrabold">Vayana Night (Circle Talk)</strong>
                                 Duduk melingkar tanpa MC formal. Pertanyaan malam: <em>"Apa yang kamu temukan hari ini?"</em>
                             </div>
                         </div>
@@ -373,8 +402,8 @@
                         <div class="flex items-start gap-3">
                             <span class="font-black text-amber-600 w-14 shrink-0">11.00</span>
                             <div>
-                                <strong class="text-brand-navy text-sm block font-extrabold">PIDIDI Local Market</strong>
-                                Menukarkan <strong>PIDIDI Voucher</strong> untuk produk curated craft, makanan, & art langsung mendukung UMKM lokal.
+                                <strong class="text-brand-navy text-sm block font-extrabold">Vayana Local Market</strong>
+                                Menukarkan <strong>Vayana Voucher</strong> untuk produk curated craft, makanan, & art langsung mendukung UMKM lokal.
                             </div>
                         </div>
                     </div>
@@ -391,8 +420,8 @@
                         <div class="flex items-start gap-3">
                             <span class="font-black text-amber-600 w-14 shrink-0">14.00</span>
                             <div>
-                                <strong class="text-brand-navy text-sm block font-extrabold">PIDIDI Reflection</strong>
-                                Pengisian kartu kenangan: <em>"Before PIDIDI, I thought..."</em> & <em>"After PIDIDI, I discovered..."</em>.
+                                <strong class="text-brand-navy text-sm block font-extrabold">Vayana Reflection</strong>
+                                Pengisian kartu kenangan: <em>"Before Vayana, I thought..."</em> & <em>"After Vayana, I discovered..."</em>.
                             </div>
                         </div>
 
@@ -400,7 +429,7 @@
                             <span class="font-black text-amber-600 w-14 shrink-0">15.00</span>
                             <div>
                                 <strong class="text-brand-navy text-sm block font-extrabold">Drop-off & Farewell</strong>
-                                Perjalanan berakhir dengan membawa: <em>PIDIDI Journey Book, karya tangan buatan sendiri, produk lokal, foto, & relasi baru</em>.
+                                Perjalanan berakhir dengan membawa: <em>Vayana Journey Book, karya tangan buatan sendiri, produk lokal, foto, & relasi baru</em>.
                             </div>
                         </div>
                     </div>
@@ -418,7 +447,7 @@
                 Kuota sangat terbatas (8–12 orang per kelompok) demi menjaga kualitas percakapan dan kehangatan pengalaman.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-                <a href="https://wa.me/6282231872974?text=Halo%20PIDIDI,%20saya%20ingin%20daftar%20PIDIDI%20JOURNEY:%20The%20Jogja%20You%20Haven't%20Met" 
+                <a href="https://wa.me/6282231872974?text=Halo%20Vayana%20Wisata,%20saya%20ingin%20daftar%20VAYANA%20JOURNEY:%20The%20Jogja%20You%20Haven't%20Met" 
                    target="_blank"
                    class="w-full sm:w-auto bg-white text-brand-orange font-black text-base px-8 py-4 rounded-full shadow-lg hover:bg-brand-cream transition-all flex items-center justify-center gap-2">
                     <i class="fa-brands fa-whatsapp text-xl"></i>

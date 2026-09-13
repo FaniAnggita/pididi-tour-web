@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tentang Kami - PIDIDI Tour & Travel Experience')
+@section('title', 'Tentang Kami - Vayana Wisata Tour & Travel Experience')
 
 @section('content')
 
@@ -8,13 +8,13 @@
     <section class="bg-brand-cream pt-14 pb-20 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <span class="bg-brand-orange/10 text-brand-orange font-extrabold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full inline-flex items-center gap-2 mb-4 shadow-sm border border-brand-orange/20">
-                <i class="fa-solid fa-compass text-brand-orange"></i> PIDIDI — Travel Around Indonesia
+                <i class="fa-solid fa-compass text-brand-orange"></i> Vayana Wisata — Travel Around Indonesia
             </span>
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-brand-navy leading-tight tracking-tight">
                 Perjalanan yang <span class="relative inline-block px-3 py-1"><svg class="absolute -inset-x-2 -inset-y-1.5 w-[calc(100%+1rem)] h-[calc(100%+0.75rem)] text-brand-blue/12 -z-10 pointer-events-none" viewBox="0 0 300 65" fill="currentColor" preserveAspectRatio="none"><path d="M 5,18 C 50,2 100,28 150,12 C 200,-2 250,22 295,12 C 302,28 298,42 295,52 C 245,64 195,44 145,58 C 95,70 45,48 5,56 C -2,40 2,26 5,18 Z"/></svg><span class="text-brand-blue">Menghubungkan Manusia</span></span> & Budaya
             </h1>
             <p class="text-gray-700 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto mt-4 font-medium leading-relaxed">
-                <strong>Pilih Destinasi, Dapat Inspirasi.</strong> Kami tidak hanya menjual perjalanan menuju suatu destinasi, tetapi menghadirkan pengalaman perjalanan yang memiliki cerita, karakter, dan nilai inspirasi bagi setiap wisatawan.
+                <strong>Lebih dari Sekadar Perjalanan.</strong> Kami tidak hanya menjual perjalanan menuju suatu destinasi, tetapi menghadirkan pengalaman perjalanan yang memiliki cerita, karakter, dan nilai inspirasi bagi setiap wisatawan.
             </p>
         </div>
 
@@ -48,7 +48,7 @@
                 <div class="lg:col-span-5 relative">
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-brand-cream group bouncy-hover">
                         <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80"
-                            alt="PIDIDI Curated Experience" class="w-full h-[420px] object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            alt="Vayana Wisata Curated Experience" class="w-full h-[420px] object-cover transform group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6 text-white space-y-1">
                             <span class="bg-brand-orange text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full">Curated Travel Experience</span>
@@ -78,12 +78,12 @@
                     </div>
 
                     <p class="text-gray-700 text-sm sm:text-base leading-relaxed font-medium">
-                        PIDIDI memposisikan diri sebagai kurator perjalanan (*curated travel experience*). Wisatawan tidak hanya diajak datang ke objek wisata populer, tetapi meresapi kehidupan lokal, keahlian pengrajin desa, cita rasa resep leluhur, serta cerita inspiratif masyarakat setempat.
+                        Vayana Wisata memposisikan diri sebagai kurator perjalanan (*curated travel experience*). Wisatawan tidak hanya diajak datang ke objek wisata populer, tetapi meresapi kehidupan lokal, keahlian pengrajin desa, cita rasa resep leluhur, serta cerita inspiratif masyarakat setempat.
                     </p>
 
                     <!-- Formula Pill Flow: Destinasi -> Pengalaman -> Cerita -> Inspirasi -->
                     <div class="bg-brand-cream/60 p-5 rounded-3xl border border-brand-orange/20 space-y-3">
-                        <span class="text-xs font-extrabold text-brand-orange uppercase tracking-wider block">Formula Nilai PIDIDI:</span>
+                        <span class="text-xs font-extrabold text-brand-orange uppercase tracking-wider block">Formula Nilai Vayana:</span>
                         <div class="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-extrabold text-brand-navy">
                             <span class="bg-white px-3.5 py-2 rounded-xl shadow-sm border border-gray-100 flex items-center gap-1.5"><i class="fa-solid fa-map-pin text-brand-orange"></i> Destinasi</span>
                             <i class="fa-solid fa-arrow-right text-gray-400"></i>
@@ -109,7 +109,7 @@
                     <i class="fa-solid fa-layer-group text-amber-500"></i> Kategori Perjalanan
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-black text-brand-navy">
-                    6 Bentuk Pengalaman Perjalanan PIDIDI
+                    6 Bentuk Pengalaman Perjalanan Vayana
                 </h2>
                 <p class="text-gray-600 text-sm sm:text-base font-medium">
                     Setiap perjalanan dirancang memiliki tema dan karakter khas untuk menjawab kerinduan petualangan Anda.
@@ -228,7 +228,7 @@
                     Asset-Light Travel Business Model
                 </h2>
                 <p class="text-gray-600 text-sm sm:text-base font-medium">
-                    PIDIDI berperan sebagai <strong>Kurator & Orkestrator</strong> yang merangkul jaringan mitra lokal di setiap daerah.
+                    Vayana Wisata berperan sebagai <strong>Kurator & Orkestrator</strong> yang merangkul jaringan mitra lokal di setiap daerah.
                 </p>
             </div>
 
@@ -280,7 +280,7 @@
                             <span class="bg-amber-400 text-brand-navy font-black text-xs px-3 py-1 rounded-full uppercase flex items-center gap-1"><i class="fa-solid fa-sparkles"></i> FLAGSHIP VALIDATED PRODUCT</span>
                             <span class="bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-users text-brand-orange mr-1"></i> Small Group (8–12 Pax)</span>
                         </div>
-                        <h3 class="text-2xl sm:text-3xl font-black">PIDIDI JOURNEY — THE JOGJA YOU HAVEN'T MET</h3>
+                        <h3 class="text-2xl sm:text-3xl font-black">VAYANA JOURNEY — THE JOGJA YOU HAVEN'T MET</h3>
                         <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
                             Perjalanan 3 hari 2 malam yang mengajak peserta mengenal Yogyakarta melalui manusia, karya, rasa, desa, dan cerita lokal. Format kelompok kecil menjamin kehangatan percakapan dan kedalaman impresi.
                         </p>
@@ -329,7 +329,7 @@
                     Platform Pengalaman Perjalanan Indonesia
                 </h2>
                 <p class="text-gray-600 text-sm sm:text-base font-medium">
-                    Visi jangka panjang PIDIDI memberikan dampak nyata dan nilai positif bagi seluruh pihak.
+                    Visi jangka panjang Vayana Wisata memberikan dampak nyata dan nilai positif bagi seluruh pihak.
                 </p>
             </div>
 
@@ -379,12 +379,12 @@
                     </p>
                 </div>
 
-                <!-- 5. PIDIDI -->
+                <!-- 5. Vayana Brand -->
                 <div class="bg-brand-cream/50 p-6 rounded-3xl border border-purple-500/20 space-y-3 bouncy-hover col-span-1 md:col-span-2 lg:col-span-1">
                     <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold">
                         <i class="fa-solid fa-chart-line text-base"></i>
                     </div>
-                    <h3 class="font-extrabold text-base text-brand-navy">PIDIDI Brand</h3>
+                    <h3 class="font-extrabold text-base text-brand-navy">Vayana Brand</h3>
                     <p class="text-xs text-gray-600 leading-relaxed font-medium">
                         Mencapai pertumbuhan bisnis sehat yang berlandaskan keberlanjutan.
                     </p>
@@ -402,17 +402,17 @@
             <div class="bg-gradient-to-r from-brand-orange via-orange-500 to-amber-500 rounded-3xl p-8 sm:p-14 text-white shadow-2xl relative overflow-hidden text-center space-y-6">
                 <i class="fa-solid fa-quote-left text-5xl text-white/30 block mx-auto"></i>
                 <h2 class="text-2xl sm:text-4xl font-black max-w-3xl mx-auto leading-tight">
-                    "PIDIDI bukan sekadar mengajak orang pergi ke suatu tempat. PIDIDI mengajak orang menemukan sesuatu dari setiap perjalanan."
+                    "Vayana Wisata bukan sekadar mengajak orang pergi ke suatu tempat. Vayana Wisata mengajak orang menemukan sesuatu dari setiap perjalanan."
                 </h2>
                 <p class="text-amber-100 text-sm sm:text-base font-bold">
-                    PIDIDI — Pilih Destinasi, Dapat Inspirasi (Travel Around Indonesia)
+                    Vayana Wisata — Lebih dari Sekadar Perjalanan (Travel Around Indonesia)
                 </p>
                 <div class="pt-4">
-                    <a href="https://wa.me/6282231872974?text=Halo%20PIDIDI,%20saya%20tertarik%20dengan%20konsep%20perjalanan%20PIDIDI"
+                    <a href="https://wa.me/6282231872974?text=Halo%20Vayana%20Wisata,%20saya%20tertarik%20dengan%20konsep%20perjalanan%20Vayana%20Wisata"
                        target="_blank"
                        class="inline-flex items-center justify-center gap-2.5 bg-brand-navy hover:bg-brand-light-navy text-white font-extrabold text-sm sm:text-base px-8 py-4 rounded-full shadow-2xl transition-all transform hover:-translate-y-1">
                         <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
-                        <span>Diskusi Perjalanan Bersama PIDIDI</span>
+                        <span>Diskusi Perjalanan Bersama Vayana Wisata</span>
                     </a>
                 </div>
             </div>

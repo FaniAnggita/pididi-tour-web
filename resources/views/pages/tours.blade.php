@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Paket Wisata & Bespoke Trip - PIDIDI')
+@section('title', 'Katalog Paket Wisata & Bespoke Trip Indonesia | Vayana Wisata')
+@section('meta_description', 'Jelajahi deretan pilihan paket wisata otentik, village life Ubud, Phinisi Komodo, heritage Jogja, dan bespoke custom trip Vayana Wisata.')
+@section('meta_keywords', 'Katalog Paket Wisata, Custom Trip Indonesia, Wisata Ubud Bali, Sailing Komodo Phinisi, Bespoke Travel Vayana')
 
 @section('content')
 
@@ -18,25 +20,22 @@
                 Pilih dari deretan curated trip pilihan atau rancang perjalanan impian Anda sendiri secara personal.
             </p>
 
-            <!-- Tab Filters (jQuery Driven) -->
+            <!-- Category Filter Pills -->
             <div class="flex flex-wrap items-center justify-center gap-2 mt-8">
                 <button type="button" data-filter="all"
                     class="tour-tab-btn active px-6 py-2.5 rounded-full text-xs sm:text-sm font-extrabold transition-all duration-300 bg-brand-orange text-white shadow-md flex items-center gap-1.5">
                     <i class="fa-solid fa-border-all"></i> Semua Trip
                 </button>
-                <button type="button" data-filter="curated"
-                    class="tour-tab-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-extrabold transition-all duration-300 bg-white text-brand-navy border border-gray-200 hover:bg-brand-cream flex items-center gap-1.5">
-                    <i class="fa-solid fa-compass text-brand-orange"></i> Curated Experience
-                </button>
-                <button type="button" data-filter="essential"
-                    class="tour-tab-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-extrabold transition-all duration-300 bg-white text-brand-navy border border-gray-200 hover:bg-brand-cream flex items-center gap-1.5">
-                    <i class="fa-solid fa-paper-plane text-brand-blue"></i> Essential Trip
-                </button>
-                <button type="button" data-filter="bespoke"
-                    class="tour-tab-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-extrabold transition-all duration-300 bg-white text-brand-navy border border-gray-200 hover:bg-brand-cream flex items-center gap-1.5">
-                    <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i> Bespoke (Custom Trip)
-                </button>
+                @if(isset($categories))
+                    @foreach($categories as $cat)
+                        <button type="button" data-filter="{{ $cat->slug }}"
+                            class="tour-tab-btn px-6 py-2.5 rounded-full text-xs sm:text-sm font-extrabold transition-all duration-300 bg-white text-brand-navy border border-gray-200 hover:bg-brand-cream flex items-center gap-1.5">
+                            <span>{{ $cat->icon ?? '🧭' }}</span> {{ $cat->name }}
+                        </button>
+                    @endforeach
+                @endif
             </div>
+
 
         </div>
 
@@ -66,244 +65,94 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div id="tours-catalog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Flagship Special Card: PIDIDI JOURNEY - THE JOGJA YOU HAVEN'T MET -->
-                <div class="tour-item lg:col-span-3 bg-gradient-to-r from-brand-navy via-brand-light-navy to-brand-navy rounded-3xl overflow-hidden shadow-2xl border-2 border-amber-400/40 text-white p-6 sm:p-10 relative group bouncy-hover"
-                    data-category="curated">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-                        <div class="lg:col-span-7 space-y-4">
-                            <div class="flex flex-wrap items-center gap-2">
-                                <span
-                                    class="bg-amber-400 text-brand-navy font-black text-xs px-3 py-1 rounded-full uppercase flex items-center gap-1"><i
-                                        class="fa-solid fa-sparkles"></i> SIGNATURE JOURNEY</span>
-                                <span class="bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full"><i
-                                        class="fa-solid fa-users text-brand-orange"></i> Small Group 8-12 Pax</span>
-                                <span class="bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full"><i
-                                        class="fa-solid fa-clock"></i> 3H 2M</span>
-                            </div>
-
-                            <div>
-                                <span
-                                    class="text-brand-orange font-extrabold text-xs tracking-widest uppercase block">PIDIDI
-                                    JOURNEY</span>
-                                <h3 class="text-2xl sm:text-3xl font-black text-white">THE JOGJA YOU HAVEN'T MET</h3>
-                                <p class="text-amber-200 text-sm italic mt-1">"Datang sebagai wisatawan. Pulang membawa
-                                    cerita."</p>
-                            </div>
-
-                            <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                                Menemukan Jogja melalui manusia, karya, rasa, dan cerita. Walking experience bersama
-                                Storyteller lokal, workshop karya tangan bareng artisan, memasak pasar tradisional, dan
-                                PIDIDI Night.
-                            </p>
+            
+            @if(isset($journey) && $journey->is_active)
+            <!-- Flagship Special Card: VAYANA JOURNEY - THE JOGJA YOU HAVEN'T MET -->
+            <div class="tour-item lg:col-span-3 bg-gradient-to-r from-brand-navy via-brand-light-navy to-brand-navy rounded-3xl overflow-hidden shadow-2xl border-2 border-amber-400/40 text-white p-6 sm:p-10 relative group bouncy-hover" data-category="curated">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="bg-amber-400 text-brand-navy font-black text-xs px-3 py-1 rounded-full uppercase">✨ SIGNATURE JOURNEY</span>
+                            <span class="bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-users text-brand-orange"></i> Small Group {{ $journey->min_pax }}-{{ $journey->max_pax }} Pax</span>
+                            <span class="bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full"><i class="fa-solid fa-clock"></i> {{ $journey->duration }}</span>
+                        </div>
+                        
+                        <div>
+                            <span class="text-brand-orange font-extrabold text-xs tracking-widest uppercase block">VAYANA JOURNEY</span>
+                            <h3 class="text-2xl sm:text-3xl font-black text-white">{{ $journey->title }}</h3>
+                            <p class="text-amber-200 text-sm italic mt-1">"{{ $journey->tagline }}"</p>
                         </div>
 
-                        <div
-                            class="lg:col-span-5 flex flex-col items-center lg:items-end space-y-4 border-t lg:border-t-0 lg:border-l border-white/15 pt-4 lg:pt-0 lg:pl-8">
-                            <div class="text-center lg:text-right">
-                                <span class="text-xs text-gray-300 font-semibold block">Curated Small Group</span>
-                                <span class="text-2xl sm:text-3xl font-black text-amber-300">Rp 3.650.000</span>
-                                <span class="text-[10px] text-gray-400 block">/orang (all inclusive)</span>
-                            </div>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                            {{ $journey->theme }} Walking experience bersama Storyteller lokal, workshop karya tangan bareng artisan, memasak pasar tradisional, dan Vayana Night.
+                        </p>
+                    </div>
 
-                            <a href="{{ route('tours.jogja-journey') }}"
-                                class="w-full sm:w-auto bg-brand-orange hover:bg-orange-600 text-white font-extrabold text-sm px-6 py-3.5 rounded-full shadow-xl transition-all flex items-center justify-center gap-2">
-                                <span>Lihat Itinerari Lengkap (3D2N)</span>
-                                <i class="fa-solid fa-arrow-right"></i>
+                    <div class="lg:col-span-5 flex flex-col items-center lg:items-end space-y-4 border-t lg:border-t-0 lg:border-l border-white/15 pt-4 lg:pt-0 lg:pl-8">
+                        <div class="text-center lg:text-right">
+                            <span class="text-xs text-gray-300 font-semibold block">Curated Small Group</span>
+                            <span class="text-2xl sm:text-3xl font-black text-amber-300">Rp {{ number_format($journey->price, 0, ',', '.') }}</span>
+                            <span class="text-[10px] text-gray-400 block">/orang (all inclusive)</span>
+                        </div>
+
+                        <a href="{{ route('tours.jogja-journey') }}" class="w-full sm:w-auto bg-brand-orange hover:bg-orange-600 text-white font-extrabold text-sm px-6 py-3.5 rounded-full shadow-xl transition-all flex items-center justify-center gap-2">
+                            <span>Lihat Itinerari Lengkap (3D2N)</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            @endif
+
+            <!-- Dynamic Tours from DB -->
+            @foreach($tours as $t)
+                <div class="tour-item bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 bouncy-hover flex flex-col" data-category="{{ $t->category }}">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="{{ Str::startsWith($t->cover_image, ['http://', 'https://']) ? $t->cover_image : asset($t->cover_image) }}" alt="{{ $t->title }}" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                        @if(is_array($t->highlight_badges) && count($t->highlight_badges) > 0)
+
+                            <span class="absolute top-4 left-4 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                                {{ $t->highlight_badges[0] }}
+                            </span>
+                        @endif
+                        <span class="absolute top-4 right-4 bg-white/90 text-brand-navy text-xs font-bold px-2.5 py-1 rounded-full shadow">
+                            <i class="fa-solid fa-clock text-brand-orange"></i> {{ $t->duration }}
+                        </span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1"><i class="fa-solid fa-location-dot text-brand-orange"></i> {{ $t->location }}</p>
+                            <h3 class="text-xl font-bold text-brand-navy">
+                                <a href="{{ route('tours.detail', $t->slug) }}" class="hover:text-brand-orange transition-colors">{{ $t->title }}</a>
+                            </h3>
+                            <p class="text-xs text-gray-600 mt-2 line-clamp-2">{{ $t->short_description }}</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-gray-400 block">Mulai dari</span>
+                                <span class="text-lg font-black text-brand-orange">Rp {{ number_format($t->starting_price, 0, ',', '.') }}</span>
+                            </div>
+                            <a href="{{ route('tours.detail', $t->slug) }}" class="bg-brand-blue text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow hover:bg-blue-700 transition-all">
+                                Detail Trip
                             </a>
                         </div>
                     </div>
                 </div>
+            @endforeach
 
-
-                <!-- Item 1: Curated Ubud -->
-                <div class="tour-item bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 bouncy-hover flex flex-col"
-                    data-category="curated">
-                    <div class="relative h-60 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80"
-                            alt="Ubud Experience" class="w-full h-full object-cover">
-                        <span
-                            class="absolute top-4 left-4 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full shadow flex items-center gap-1.5"><i
-                                class="fa-solid fa-tree-city"></i> Curated</span>
-                        <span
-                            class="absolute top-4 right-4 bg-white/90 text-brand-navy text-xs font-bold px-2.5 py-1 rounded-full shadow"><i
-                                class="fa-solid fa-clock text-brand-orange"></i> 4H 3M</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div>
-                            <p class="text-xs text-gray-500 mb-1"><i class="fa-solid fa-location-dot text-brand-orange"></i>
-                                Ubud & Sidemen, Bali</p>
-                            <h3 class="text-xl font-bold text-brand-navy">Ubud Cultural & Authentic Village</h3>
-                            <p class="text-xs text-gray-600 mt-2">Menyelami kehidupan pedesaan Bali, belajar memasak
-                                tradisional, dan trekking persawahan hijau.</p>
-                        </div>
-                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                            <div>
-                                <span class="text-[10px] text-gray-400 block">Mulai dari</span>
-                                <span class="text-lg font-black text-brand-orange">Rp 3.850.000</span>
-                            </div>
-                            <a href="https://wa.me/6282231872974?text=Halo%20PIDIDI,%20saya%20tertarik%20paket%20Ubud%20Cultural"
-                                target="_blank"
-                                class="bg-brand-orange text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow hover:bg-orange-600 transition-all">Pesan
-                                Sekarang</a>
-                        </div>
-                    </div>
+            <!-- Bespoke Custom Card -->
+            <div class="tour-item bg-gradient-to-br from-brand-orange to-amber-500 rounded-3xl p-8 text-white shadow-xl flex flex-col justify-between" data-category="bespoke">
+                <div class="space-y-4">
+                    <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">🎨 Custom Unlimited</span>
+                    <h3 class="text-2xl font-black">Bespoke Trip (Rancang Bebas)</h3>
+                    <p class="text-xs text-amber-100 leading-relaxed">
+                        Ingin rute khusus bersama grup pribadi, honeymoon romantis, atau perjalanan rombongan kantor? Isi formulir di bawah untuk kalkulasi instan!
+                    </p>
                 </div>
-
-                <!-- Item 2: Essential Komodo -->
-                <div class="tour-item bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 bouncy-hover flex flex-col"
-                    data-category="curated">
-                    <div class="relative h-60 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=600&q=80"
-                            alt="Komodo Island" class="w-full h-full object-cover">
-                        <span
-                            class="absolute top-4 left-4 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full shadow flex items-center gap-1.5"><i
-                                class="fa-solid fa-camera"></i> Curated</span>
-                        <span
-                            class="absolute top-4 right-4 bg-white/90 text-brand-navy text-xs font-bold px-2.5 py-1 rounded-full shadow"><i
-                                class="fa-solid fa-clock text-brand-orange"></i> 3H 2M</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div>
-                            <p class="text-xs text-gray-500 mb-1"><i class="fa-solid fa-location-dot text-brand-orange"></i>
-                                Labuan Bajo, NTT</p>
-                            <h3 class="text-xl font-bold text-brand-navy">Phinisi Liveaboard Komodo Odyssey</h3>
-                            <p class="text-xs text-gray-600 mt-2">Mengarungi gugusan pulau eksotis, sunrise di Padar Island,
-                                dan snorkeling bersama manta ray.</p>
-                        </div>
-                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                            <div>
-                                <span class="text-[10px] text-gray-400 block">Mulai dari</span>
-                                <span class="text-lg font-black text-brand-orange">Rp 7.500.000</span>
-                            </div>
-                            <a href="https://wa.me/6282231872974?text=Halo%20PIDIDI,%20saya%20tertarik%20paket%20Komodo%20Liveaboard"
-                                target="_blank"
-                                class="bg-brand-orange text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow hover:bg-orange-600 transition-all">Pesan
-                                Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3: Essential Jogja -->
-                <div class="tour-item bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 bouncy-hover flex flex-col"
-                    data-category="essential">
-                    <div class="relative h-60 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=600&q=80"
-                            alt="Jogja Trip" class="w-full h-full object-cover">
-                        <span
-                            class="absolute top-4 left-4 bg-rose-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow flex items-center gap-1.5"><i
-                                class="fa-solid fa-utensils"></i> Essential</span>
-                        <span
-                            class="absolute top-4 right-4 bg-white/90 text-brand-navy text-xs font-bold px-2.5 py-1 rounded-full shadow"><i
-                                class="fa-solid fa-clock text-brand-orange"></i> 3H 2M</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div>
-                            <p class="text-xs text-gray-500 mb-1"><i
-                                    class="fa-solid fa-location-dot text-brand-orange"></i> Yogyakarta</p>
-                            <h3 class="text-xl font-bold text-brand-navy">Jogja Heritage & Culinary Trail</h3>
-                            <p class="text-xs text-gray-600 mt-2">Jelajah warisan cagar budaya, sunrise Borobudur, dan
-                                kuliner malam legendaris.</p>
-                        </div>
-                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                            <div>
-                                <span class="text-[10px] text-gray-400 block">Mulai dari</span>
-                                <span class="text-lg font-black text-brand-orange">Rp 2.450.000</span>
-                            </div>
-                            <a href="https://wa.me/6282231872974?text=Halo%20PIDIDI,%20saya%20tertarik%20paket%20Jogja%20Heritage"
-                                target="_blank"
-                                class="bg-brand-orange text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow hover:bg-orange-600 transition-all">Pesan
-                                Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 4: Essential Toraja -->
-                <div class="tour-item bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 bouncy-hover flex flex-col"
-                    data-category="essential">
-                    <div class="relative h-60 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=600&q=80"
-                            alt="Tana Toraja" class="w-full h-full object-cover">
-                        <span
-                            class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow flex items-center gap-1.5"><i
-                                class="fa-solid fa-mountain text-xs"></i> Essential</span>
-                        <span
-                            class="absolute top-4 right-4 bg-white/90 text-brand-navy text-xs font-bold px-2.5 py-1 rounded-full shadow"><i
-                                class="fa-solid fa-clock text-brand-orange"></i> 4H 3M</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div>
-                            <p class="text-xs text-gray-500 mb-1"><i
-                                    class="fa-solid fa-location-dot text-brand-orange"></i> Sulawesi Selatan</p>
-                            <h3 class="text-xl font-bold text-brand-navy">Toraja Culture & Highlands</h3>
-                            <p class="text-xs text-gray-600 mt-2">Menyaksikan megahnya rumah adat Tongkonan, tebing batu
-                                kubur Kete Kesu, dan kopi khas Toraja.</p>
-                        </div>
-                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                            <div>
-                                <span class="text-[10px] text-gray-400 block">Mulai dari</span>
-                                <span class="text-lg font-black text-brand-orange">Rp 4.200.000</span>
-                            </div>
-                            <a href="https://wa.me/6282231872974?text=Halo%20PIDIDI,%20saya%20tertarik%20paket%20Toraja%20Culture"
-                                target="_blank"
-                                class="bg-brand-orange text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow hover:bg-orange-600 transition-all">Pesan
-                                Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 5: Curated Raja Ampat -->
-                <div class="tour-item bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 bouncy-hover flex flex-col"
-                    data-category="curated">
-                    <div class="relative h-60 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80"
-                            alt="Raja Ampat" class="w-full h-full object-cover">
-                        <span
-                            class="absolute top-4 left-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow flex items-center gap-1.5"><i
-                                class="fa-solid fa-fish"></i> Curated</span>
-                        <span
-                            class="absolute top-4 right-4 bg-white/90 text-brand-navy text-xs font-bold px-2.5 py-1 rounded-full shadow"><i
-                                class="fa-solid fa-clock text-brand-orange"></i> 5H 4M</span>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <div>
-                            <p class="text-xs text-gray-500 mb-1"><i
-                                    class="fa-solid fa-location-dot text-brand-orange"></i> Papua Barat</p>
-                            <h3 class="text-xl font-bold text-brand-navy">Raja Ampat Paradise & Wayag Lagoon</h3>
-                            <p class="text-xs text-gray-600 mt-2">Surga biodiversitas bawah laut dunia, gugusan pulau
-                                karang Pianemo & Wayag.</p>
-                        </div>
-                        <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
-                            <div>
-                                <span class="text-[10px] text-gray-400 block">Mulai dari</span>
-                                <span class="text-lg font-black text-brand-orange">Rp 12.500.000</span>
-                            </div>
-                            <a href="https://wa.me/6282231872974?text=Halo%20PIDIDI,%20saya%20tertarik%20paket%20Raja%20Ampat"
-                                target="_blank"
-                                class="bg-brand-orange text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow hover:bg-orange-600 transition-all">Pesan
-                                Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 6: Bespoke Card Placeholder -->
-                <div class="tour-item bg-gradient-to-br from-brand-orange to-amber-500 rounded-3xl p-8 text-white shadow-xl flex flex-col justify-between"
-                    data-category="bespoke">
-                    <div class="space-y-4">
-                        <span
-                            class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full inline-flex items-center gap-1.5"><i
-                                class="fa-solid fa-sliders"></i> Custom Unlimited</span>
-                        <h3 class="text-2xl font-black">Bespoke Trip (Rancang Bebas)</h3>
-                        <p class="text-xs text-amber-100 leading-relaxed">
-                            Ingin rute khusus bersama grup pribadi, honeymoon romantis, atau perjalanan rombongan kantor?
-                            Isi formulir di bawah untuk kalkulasi instan!
-                        </p>
-                    </div>
-                    <a href="#bespoke"
-                        class="mt-6 w-full bg-white text-brand-orange font-extrabold text-center py-3 rounded-2xl shadow hover:bg-brand-cream transition-all">
-                        Mulai Rancang Trip
-                    </a>
-                </div>
+                <a href="#bespoke" class="mt-6 w-full bg-white text-brand-orange font-extrabold text-center py-3 rounded-2xl shadow hover:bg-brand-cream transition-all">
+                    Mulai Rancang Trip
+                </a>
+            </div>
 
             </div>
 
@@ -335,12 +184,18 @@
                             <label class="block text-xs font-bold text-brand-navy mb-2">1. Pilih Destinasi Impian</label>
                             <select id="bespoke-dest"
                                 class="w-full bg-brand-cream/50 border border-gray-200 rounded-2xl px-4 py-3 text-sm font-bold text-brand-navy focus:ring-2 focus:ring-brand-orange">
-                                <option value="bali">Bali & Lombok</option>
-                                <option value="bajo">Labuan Bajo & Komodo</option>
-                                <option value="jogja">Yogyakarta & Solo</option>
-                                <option value="toraja">Tana Toraja</option>
-                                <option value="rajaampat">Raja Ampat</option>
-                                <option value="custom">Destinasi Lainnya (Kustom)</option>
+                                @if(isset($destinations) && count($destinations) > 0)
+                                    @foreach($destinations as $d)
+                                        <option value="{{ $d->slug }}">{{ $d->name }}</option>
+                                    @endforeach
+                                @else
+                                    <option value="bali">Bali & Lombok</option>
+                                    <option value="labuan-bajo">Labuan Bajo & Komodo</option>
+                                    <option value="yogyakarta">Yogyakarta & Solo</option>
+                                    <option value="toraja">Tana Toraja</option>
+                                    <option value="raja-ampat">Raja Ampat</option>
+                                    <option value="custom">Destinasi Lainnya (Custom)</option>
+                                @endif
                             </select>
                         </div>
 
@@ -425,21 +280,45 @@
                 }
             });
 
-            // Interactive Bespoke Price Calculation Estimator
+            // Interactive Bespoke Price Calculation Estimator (Admin Configured Rates)
+            var rates = {
+                homestay: {{ $setting->bespoke_rate_homestay ?? 600000 }},
+                hotel3: {{ $setting->bespoke_rate_hotel3 ?? 950000 }},
+                resort: {{ $setting->bespoke_rate_resort ?? 1800000 }}
+            };
+
+            var multipliers = {
+                @if(isset($destinations) && count($destinations) > 0)
+                    @foreach($destinations as $d)
+                        "{{ $d->slug }}": {{ $d->multiplier }},
+                    @endforeach
+                @else
+                    "bali": 1.00,
+                    "labuan-bajo": 1.40,
+                    "yogyakarta": 0.85,
+                    "toraja": 1.25,
+                    "raja-ampat": 2.10,
+                    "custom": 1.00
+                @endif
+            };
+
+            var minPaxDiscount = {{ $setting->bespoke_min_pax_discount ?? 4 }};
+            var discountPercent = {{ $setting->bespoke_discount_percent ?? 15 }};
+
             function calculateBespokePrice() {
+                var dest = $('#bespoke-dest').val();
                 var days = parseInt($('#bespoke-days').val()) || 4;
                 var people = parseInt($('#bespoke-people').val()) || 2;
                 var stay = $('#bespoke-stay').val();
 
-                var baseDailyRate = 600000;
-                if (stay === 'hotel3') baseDailyRate = 950000;
-                if (stay === 'resort') baseDailyRate = 1800000;
+                var baseDailyRate = rates[stay] || 600000;
+                var destMult = multipliers[dest] || 1.0;
 
-                var totalPerPerson = (days * baseDailyRate);
+                var totalPerPerson = (days * baseDailyRate * destMult);
 
-                // Group discount for > 4 people
-                if (people >= 4) {
-                    totalPerPerson = totalPerPerson * 0.85;
+                // Group discount if pax >= minPaxDiscount
+                if (people >= minPaxDiscount) {
+                    totalPerPerson = totalPerPerson * (1 - (discountPercent / 100));
                 }
 
                 var formatted = new Intl.NumberFormat('id-ID', {
@@ -449,6 +328,9 @@
                 }).format(totalPerPerson);
                 $('#bespoke-estimate-price').text(formatted);
             }
+
+            // Run calculation on load and on field change
+            calculateBespokePrice();
 
             $('#bespoke-dest, #bespoke-days, #bespoke-people, #bespoke-stay').on('change input',
                 calculateBespokePrice);
@@ -460,14 +342,16 @@
                 var stay = $('#bespoke-stay option:selected').text();
                 var est = $('#bespoke-estimate-price').text();
 
-                var msg = "Halo PIDIDI, saya ingin konsultasi Bespoke Trip Custom:%0A" +
+                var waPhone = "{{ preg_replace('/[^0-9]/', '', $setting->phone_wa ?? '6282231872974') }}";
+
+                var msg = "Halo Vayana Wisata, saya ingin konsultasi Bespoke Trip Custom:%0A" +
                     "- Destinasi: " + encodeURIComponent(dest) + "%0A" +
                     "- Durasi: " + encodeURIComponent(days) + "%0A" +
                     "- Peserta: " + encodeURIComponent(people) + " orang%0A" +
                     "- Akomodasi: " + encodeURIComponent(stay) + "%0A" +
                     "- Estimasi Web: " + encodeURIComponent(est) + "/orang";
 
-                window.open("https://wa.me/6282231872974?text=" + msg, "_blank");
+                window.open("https://wa.me/" + waPhone + "?text=" + msg, "_blank");
             });
 
         });
